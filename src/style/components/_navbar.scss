@@ -1,72 +1,200 @@
 /************ BURGER ***********************/
 #hamburger-wrap{
-    position: relative;
-    display: block;
-    width: 40px;
-    height: 40px;
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;    
+  z-index:1000;
+  margin-left: auto;
+  
+ 
+  @include breakpoint(md){
+      display: none;
+  }
+  }    
+  .burger-open{
+  width: 100%;
+  height: 100%;
+  }
+  .line {
+      position: absolute;
+      height: 10%;
+      width:70%;
+      background:$primary-color;
+      box-shadow: .5px .5px black;
+      border-radius:10px;
+      transition: all cubic-bezier(0.25, 0.1, 0.28, 1.54) 0.32s;
+      }
+      .line01 {
+      top:25%;
+      }
+      .line02 {
+      top:47%;
+      }
+      .line03 {
+      top:69%;
+      }
     
-    z-index:1000;
-    margin-left: auto;
+      .burger-close .line {
+        box-shadow: none;
+        background: $secondary-color;
+        }
+      .burger-close .line01 {
+      transform:rotate(45deg);
+      top:49%;
+      }
+      .burger-close .line02, .burger-close .line03 {
+      transform:rotate(-45deg);
+      top:49%;
+      }
     
-   
-    @include breakpoint(md){
-        display: none;
-    }
-    }    
-    .burger-open{
-    width: 100%;
-    height: 100%;
-    }
-    .line {
-        position: absolute;
-        height: 10%;
-        width:70%;
-        background:$primary-color;
-        box-shadow: .5px .5px black;
-        border-radius:10px;
-        transition: all cubic-bezier(0.25, 0.1, 0.28, 1.54) 0.32s;
-        }
-        .line01 {
-        top:25%;
-        }
-        .line02 {
-        top:47%;
-        }
-        .line03 {
-        top:69%;
-        }
-        .burger-open.burger-close .line {
-          box-shadow: none;
-          }
-        .burger-open.burger-close .line01 {
-        transform:rotate(45deg);
-        top:49%;
-        }
-        .burger-open.burger-close .line02, .burger-open.burger-close .line03 {
-        transform:rotate(-45deg);
-        top:49%;
-        }
-      
 
 /**************************************END HAMBURGER*******************************/
-.top-nav{
-    padding: 1em 5%;
-    display: flex;
-    justify-content: space-between;
-    background: $secondary-color;
+
+.navagation-wrap.mobile-wrap #hamburger-wrap{
+position: fixed;
+z-index: 100000;
+right: 25px;
+} /*Hack for keeping hamburger in place  */
+#active{
+color: $active-color;
 }
-.nav-menu{
+
+
+#main-nav-wrap{
+display: flex;
+justify-content: space-between;
+  padding:  .5em .5em .25em;
+  background: white;     
+  align-items: center; 
+  transition: background .5s; 
+  
+  @include breakpoint(md){
+    padding:  1em 5%;
+  }
+
+.logo-wrap a{
+  color: white;
+  font-size: 20px;
+  font-family: $primary-font;
+  @include breakpoint(md){
+   font-size: 32px;
+ 
+  }
+
+  &:hover{
+    opacity: .5;
+  }
+}
+.mobile-phone{
+margin-left: 25px;
+@include breakpoint(md){
+  display: none;
+}
+
+}
+} 
+
+
+.responsive-nav.mobile-nav .nav{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 18vh 10% 10% 10%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;  
+  background: $primary-color;
+  z-index: 1000;
+  text-align: center;
+  @include breakpoint(md){
+      padding:0;
+      width: auto;
+      position: relative;               
+      flex-direction: row;
+      height: auto; 
+      background: inherit;
+      margin: .75em;
+  }
+}
+.responsive-nav.mobile-nav .nav a{
+
+  font-family: $primary-font;
+  font-weight: bold;
+  color: $nav-text-color;
+  font-size: 35px;
+  line-height: 120%;
+  margin:  40px 0;    
+  @include breakpoint(md){       
+      font-weight: 300;     
+      font-size: 20px;       
+      margin: .5em;
+      padding: .5em;
+      color: darkslategrey;
+  }
+  &:hover {
+    color: $hover-color;
+  }
+  &:active {
+    color: $active-color;
+  }
+
+}
+.nav{
     display: none;
-    @include breakpoint(md){
-      display: block;
-      
-    }
+  @include breakpoint(md){
+      width: auto;
+      position: relative;  
+      margin: .75em;
+      display: flex;       
+      flex-direction: row;
+      height: auto;  
+      background: inherit;
+     
+
+  }
+
 }
-.nav-menu a{
-    font-family: $primary-font; 
-    color:rgb(0, 0, 0);
-    padding: .25em .5em;
-    margin: .25em .5em;
-    font-size: 20px;
+.nav a{
+  @include breakpoint(md){
+      font-family: $primary-font;
+      font-weight: 300;
+      color: darkslategrey;
+      font-size: 20px;
+      line-height: 120%;
+      margin: .5em;
+      padding: .5em;
+  }
+  &:hover {
+    color: $secondary-color;
    
   }
+  &:active {
+    color: $active-color;
+  }
+
+}
+
+.responsive-contact a{
+    display: none;
+
+    @include breakpoint(md){
+      display: block;
+      padding: .5em 2em; 
+      border: 3px solid $nav-contact-color;
+      color: $nav-contact-text-color;
+      font-family:$primary-font;
+      font-size: 20px;
+      &:hover {
+        
+        font-weight: bold;
+        background: $hover-color;
+        border-color: $hover-color;
+      }
+      &:active {
+        color: $active-color;
+      }
+
+    }      
+}
