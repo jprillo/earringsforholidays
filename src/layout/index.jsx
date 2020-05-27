@@ -4,6 +4,7 @@ import config from "../../data/SiteConfig";
 import "../style/main.scss"
 import NavBar from "../components/NavBar/NavBar";
 
+
 export default class MainLayout extends React.Component {
   constructor (props) {
     super(props)
@@ -25,6 +26,7 @@ export default class MainLayout extends React.Component {
         </Helmet>
         <NavBar isActive={this.state.isActive} toggleNavbar={() => this.toggleNavbar()} />
         {children}
+    
       </div>
     );
   }
