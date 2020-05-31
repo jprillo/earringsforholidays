@@ -23,6 +23,7 @@
   h1{
     color: $secondary-color;
     font-size: 33px;
+    text-align: center;
     @include breakpoint(md){       
       font-size: 50px;         
      } 

@@ -1,5 +1,5 @@
 ---
-title: "Product 1"
+title: "Product 8"
 cover: https://formalflamingo.com/static/flamingo-illustration-12c8ee9fdbb7289d86a43de2a607263e.svg
 date: "2017-01-01"
 category: "Reds"

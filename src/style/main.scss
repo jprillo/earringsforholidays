@@ -9,9 +9,43 @@
 section{
   padding: 80px 15%;
 }
-
+.product{
+  justify-content: center;
+  padding: 5% 10%;
+}
 .post{
-  border: solid 10px red;
+  border: solid 1px red;
+  text-align: center;
+  margin: 1%;
+  padding: 1%;
+  h3{
+    padding: 0;
+  }
+
+}
+.post-listing-wrap{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2% 10%;
+ 
+  
+}
+
+.cat-list{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.Merlot{
+  color: red;
+}
+.France{
+  color: green;
+}
+.Italy{
+  color: green;
 }
 
 

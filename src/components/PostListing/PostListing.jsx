@@ -23,18 +23,18 @@ class PostListing extends React.Component {
     const postList = this.getPostList();
     
     return (
-      <div>
+      <div className="post-listing-wrap">
         {/* Your post list here. */
         postList.map(post => (
-          <div className="post">
-          <Link  to={post.path} key={post.title}>
+          
+          <Link className="post col-2" to={post.path} key={post.title}>
            
             <h3 
             >{post.title}</h3>
-            <img src={post.cover}/> 
+            <img width="100%" src={post.cover}/> 
            
           </Link>
-          </div>
+        
           
         ))}
       </div>

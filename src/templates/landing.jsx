@@ -5,6 +5,8 @@ import Layout from "../layout";
 
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
+import SideNav from "../components/SideNav/SideNav";
+
 
 class Landing extends React.Component {
   render() {
@@ -18,10 +20,14 @@ class Landing extends React.Component {
          <h1>VynTrade landing</h1>
           </div>
         </div>
+
+<SideNav />
+
       </Layout>
     );
   }
 }
 
 export default Landing;
+
 

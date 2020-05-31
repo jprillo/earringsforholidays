@@ -30,8 +30,16 @@ export default class PostTemplate extends React.Component {
           </Helmet>
           <SEO postPath={slug} postNode={postNode} postSEO />
           <div>
+            <div className="flex product">
+              <div className="col-4">
             <h1>{post.title}</h1>
             <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+            </div>
+            <div className="col-4">
+              <img width="100%" src={post.cover} alt=""/>
+            </div>
+
+            </div>
             <div className="post-meta">
               <PostTags tags={post.tags} />
               <SocialLinks postPath={slug} postNode={postNode} />
