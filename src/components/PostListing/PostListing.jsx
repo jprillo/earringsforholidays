@@ -33,7 +33,7 @@ class PostListing extends React.Component {
            
             <h3 
             >{post.title}</h3>
-            <img width="100%" src={`/${_.kebabCase(post.cover)}`}/> 
+            <img width="100%" src={`https://github.com/jprillo/earringsforholidays/blob/master/content/${(post.title)}/${_.kebabCase(post.cover)}`}/> 
         <p>{post.description}</p>
            
           </Link>

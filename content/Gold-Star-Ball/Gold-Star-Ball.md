@@ -1,6 +1,6 @@
 ---
 title: "Gold-Star-Ball"
-cover: /static/images/icon.png
+cover: ball-goldstar.jpg
 date: "2017-01-01"
 description: "This is a Description"
 category: "Reds"
